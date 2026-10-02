@@ -14,3 +14,7 @@ logs/
 Thumbs.db
 *.env
 .env
+
+# Local secrets / credentials (never commit)
+db.local.properties
+*.local.properties

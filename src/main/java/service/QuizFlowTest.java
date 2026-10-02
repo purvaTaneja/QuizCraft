@@ -26,11 +26,11 @@ public class QuizFlowTest {
             if (existing.isEmpty()) {
                 System.out.println("No questions found. Creating 3 test questions...");
                 questionDAO.addQuestion(new Question(0, quizId, "What is the capital of France?",
-                    "London", "Paris", "Berlin", "Madrid", "B"));
+                    "London", "Paris", "Berlin", "Madrid", "B", "General"));
                 questionDAO.addQuestion(new Question(0, quizId, "What is 2 + 2?",
-                    "3", "4", "5", "6", "B"));
+                    "3", "4", "5", "6", "B", "General"));
                 questionDAO.addQuestion(new Question(0, quizId, "Which language runs on the JVM?",
-                    "Java", "C", "Python", "HTML", "A"));
+                    "Java", "C", "Python", "HTML", "A", "General"));
                 System.out.println("3 test questions created.");
             } else {
                 System.out.println("Questions already exist (" + existing.size() + " found). Skipping creation.");

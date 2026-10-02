@@ -12,7 +12,7 @@ public class QuestionTest {
         // Test 1: Add a question to quiz ID 1
         System.out.println("--- Test 1: Add a question ---");
         Question newQuestion = new Question(0, 1, "What is the capital of France?",
-            "London", "Paris", "Berlin", "Madrid", "B");
+            "London", "Paris", "Berlin", "Madrid", "B", "General");
         try {
             questionDAO.addQuestion(newQuestion);
             System.out.println("Question added successfully!");

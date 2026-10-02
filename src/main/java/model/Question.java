@@ -9,13 +9,14 @@ public class Question {
     private String optionC;
     private String optionD;
     private String correctAnswer;
+    private String topic;
 
     public Question() {
     }
 
     public Question(int id, int quizId, String questionText,
                    String optionA, String optionB, String optionC, String optionD,
-                   String correctAnswer) {
+                   String correctAnswer, String topic) {
         this.id = id;
         this.quizId = quizId;
         this.questionText = questionText;
@@ -24,6 +25,7 @@ public class Question {
         this.optionC = optionC;
         this.optionD = optionD;
         this.correctAnswer = correctAnswer;
+        this.topic = topic;
     }
 
     public int getId() {
@@ -35,7 +37,7 @@ public class Question {
     }
 
     public int getQuizId() {
-         return quizId;
+        return quizId;
     }
 
     public void setQuizId(int quizId) {
@@ -88,5 +90,13 @@ public class Question {
 
     public void setCorrectAnswer(String correctAnswer) {
         this.correctAnswer = correctAnswer;
+    }
+
+    public String getTopic() {
+        return topic;
+    }
+
+    public void setTopic(String topic) {
+        this.topic = topic;
     }
 }

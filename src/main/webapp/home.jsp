@@ -51,13 +51,13 @@
 
     <div class="dashboard">
         <div class="hero-section">
-            <h1>Hey, <span><%= user.getUsername() %></span>!</h1>
-            <p>Ready to level up your Java skills?</p>
-            <div class="motivation-pill">Learn. Practice. Challenge yourself.</div>
+            <h1>Welcome back, <span><%= user.getUsername() %></span>!</h1>
+            <p>Choose a course and start learning Java today.</p>
+            <div class="motivation-pill">Learn. Practice. Level Up.</div>
         </div>
 
         <div class="section-header">
-            <h2>Choose Your Challenge</h2>
+            <h2>Choose a Course</h2>
         </div>
         <div class="quiz-grid">
             <% for (Quiz quiz : quizzes) { %>
@@ -65,13 +65,13 @@
                     <div class="quiz-card-icon">&#128187;</div>
                     <h3><%= quiz.getTitle() %></h3>
                     <p><%= quiz.getDescription() %></p>
-                    <a href="${pageContext.request.contextPath}/quiz?quizId=<%= quiz.getId() %>" class="btn btn-primary">Start Quiz &rarr;</a>
+                    <a href="${pageContext.request.contextPath}/quiz?quizId=<%= quiz.getId() %>" class="btn btn-primary">Start Course &rarr;</a>
                 </div>
             <% } %>
             <% if (quizzes.isEmpty()) { %>
                 <div class="empty-state">
                     <div class="empty-state-icon">&#127919;</div>
-                    <p>No quizzes available yet. Check back soon!</p>
+                    <p>No courses available yet. Check back soon!</p>
                 </div>
             <% } %>
         </div>

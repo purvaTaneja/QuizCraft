@@ -14,11 +14,11 @@ public class QuizServiceTest {
 
         // Create 5 test questions
         List<Question> questions = new ArrayList<>();
-        questions.add(new Question(1, 1, "Q1", "A", "B", "C", "D", "A"));
-        questions.add(new Question(2, 1, "Q2", "A", "B", "C", "D", "B"));
-        questions.add(new Question(3, 1, "Q3", "A", "B", "C", "D", "C"));
-        questions.add(new Question(4, 1, "Q4", "A", "B", "C", "D", "D"));
-        questions.add(new Question(5, 1, "Q5", "A", "B", "C", "D", "A"));
+        questions.add(new Question(1, 1, "Q1", "A", "B", "C", "D", "A", "General"));
+        questions.add(new Question(2, 1, "Q2", "A", "B", "C", "D", "B", "General"));
+        questions.add(new Question(3, 1, "Q3", "A", "B", "C", "D", "C", "General"));
+        questions.add(new Question(4, 1, "Q4", "A", "B", "C", "D", "D", "General"));
+        questions.add(new Question(5, 1, "Q5", "A", "B", "C", "D", "A", "General"));
 
         // Test 1: 3 correct out of 5
         System.out.println("--- Test 1: 3 correct out of 5 ---");
