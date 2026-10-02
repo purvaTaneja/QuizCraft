@@ -2,54 +2,79 @@
 
 ## A Java-Based Online Quiz Platform
 
-QuizCraft is an interactive online quiz platform designed to make learning and assessment more engaging and personalized.
+QuizCraft is a Java-based online quiz platform designed to provide a simple and interactive way for users to take quizzes and evaluate their knowledge.
 
-The platform allows participants to take quizzes, receive automatic results, track their performance, and identify topics where they need improvement. Quiz creators can create and manage quizzes and questions, while administrators can manage users and quiz content.
+The platform allows users to register, log in, attempt Java quizzes, receive automatic scores, and view their results.
 
-## Key Features
+## Features
 
-- User registration and login
-- Role-based access
-- Quiz creation and management
-- Question management
-- Timed quizzes
-- Automatic score calculation
-- Performance tracking
-- Weak Topic Detection
-- Quiz attempt history
-- Leaderboard
+- User Registration
+- User Login and Logout
+- Session-based Authentication
+- Protected Quiz and Result Pages
+- Java-based Multiple Choice Quizzes
+- One Question at a Time Quiz Interface
+- Quiz Progress Indicator
+- Countdown Timer
+- Automatic Score Calculation
+- Result Display
+- Responsive and Modern User Interface
+- MariaDB Database Integration
 
-## Unique Feature
+## Quiz Flow
 
-### Weak Topic Detection
+1. User creates an account.
+2. User logs into QuizCraft.
+3. Available quizzes are displayed.
+4. User starts a quiz.
+5. Questions are displayed one at a time.
+6. User selects answers and navigates through the quiz.
+7. The quiz is submitted.
+8. The system automatically calculates the score.
+9. The result is saved in the database.
+10. The user can view the final result.
 
-QuizCraft analyzes a participant's performance topic-wise and identifies areas where the participant needs improvement.
-
-For example:
-
-- OOP: 90%
-- Arrays: 80%
-- Exception Handling: 45%
-
-The system identifies **Exception Handling** as a weak topic and helps the participant focus on that area.
-
-## Technologies
+## Technologies Used
 
 - Java
 - JSP
-- Servlets
+- Jakarta Servlets
 - JDBC
-- MySQL
+- Maven
+- MariaDB
 - HTML
 - CSS
 - JavaScript
+- Apache Tomcat
 
-## Project Status
+## Project Structure
 
-🚧 Under Development
-
-## Team
-
-- Purva
-- Meenu Ahlawat
-- Shivalika
+```text
+QuizCraft/
+│
+├── src/
+│   └── main/
+│       ├── java/
+│       │   ├── dao/
+│       │   ├── model/
+│       │   ├── service/
+│       │   ├── servlet/
+│       │   └── util/
+│       │
+│       ├── resources/
+│       │   └── schema.sql
+│       │
+│       └── webapp/
+│           ├── css/
+│           │   └── style.css
+│           ├── WEB-INF/
+│           │   └── web.xml
+│           ├── login.jsp
+│           ├── register.jsp
+│           ├── home.jsp
+│           ├── quiz.jsp
+│           └── result.jsp
+│
+├── pom.xml
+├── .gitignore
+└── README.md
