@@ -11,10 +11,13 @@ import jakarta.servlet.http.HttpSession;
 import model.User;
 
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 @WebServlet("/register")
 public class RegisterServlet extends HttpServlet {
 
+    private static final Logger LOGGER = Logger.getLogger(RegisterServlet.class.getName());
     private UserDAO userDAO = new UserDAO();
 
     @Override
@@ -48,6 +51,7 @@ public class RegisterServlet extends HttpServlet {
                 response.sendRedirect(request.getContextPath() + "/register?error=exists");
             }
         } catch (Exception e) {
+            LOGGER.log(Level.SEVERE, "Registration failed before completion", e);
             response.sendRedirect(request.getContextPath() + "/register?error=1");
         }
     }
