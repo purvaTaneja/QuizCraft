@@ -1,0 +1,46 @@
+# ============================================================================
+# Build context exclusions for the QuizCraft production image.
+# Keeps local secrets, toolchains and build output out of the Docker context.
+# ============================================================================
+
+# --- Secrets: never send credentials to the builder ---
+db.local.properties
+*.local.properties
+*.env
+.env
+
+# --- Locally installed toolchains (huge, and would shadow the image's Maven) ---
+tools/
+
+# --- Build output: the image builds from source, never from stale artifacts ---
+target/
+out/
+*.war
+*.class
+*.jar
+
+# --- VCS metadata ---
+.git/
+.gitignore
+.github/
+
+# --- IDE / editor ---
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+
+# --- Logs and temporary files ---
+*.log
+logs/
+tmp/
+*.tmp
+*.bak
+*.orig
+*.swp
+
+# --- OS noise ---
+.DS_Store
+Thumbs.db
+desktop.ini
