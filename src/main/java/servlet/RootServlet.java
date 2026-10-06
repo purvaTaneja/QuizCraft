@@ -17,7 +17,7 @@ import java.io.IOException;
  * visitors to the login page. Users who already have a session are sent straight
  * to their dashboard instead.
  */
-@WebServlet("/")
+@WebServlet("")
 public class RootServlet extends HttpServlet {
 
     @Override
