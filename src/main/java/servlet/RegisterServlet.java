@@ -51,7 +51,7 @@ public class RegisterServlet extends HttpServlet {
                 response.sendRedirect(request.getContextPath() + "/register?error=exists");
             }
         } catch (Exception e) {
-            LOGGER.log(Level.SEVERE, "Registration failed before completion", e);
+            LOGGER.log(Level.SEVERE, "Registration failed: " + e.getClass().getName() + ": " + e.getMessage(), e);
             response.sendRedirect(request.getContextPath() + "/register?error=1");
         }
     }
