@@ -2,79 +2,206 @@
 
 ## A Java-Based Online Quiz Platform
 
-QuizCraft is a Java-based online quiz platform designed to provide a simple and interactive way for users to take quizzes and evaluate their knowledge.
+QuizCraft is a Java-based online quiz platform that allows users to register, log in, attempt interactive quizzes, receive instant results, and track their quiz performance.
 
-The platform allows users to register, log in, attempt Java quizzes, receive automatic scores, and view their results.
+The project is built using Java, JSP, Jakarta Servlets, JDBC, MySQL/MariaDB, HTML, CSS, and JavaScript, with a responsive web interface and database-backed quiz management.
 
-## Features
+## 🌐 Live Demo
 
-- User Registration
-- User Login and Logout
-- Session-based Authentication
-- Protected Quiz and Result Pages
-- Java-based Multiple Choice Quizzes
-- One Question at a Time Quiz Interface
-- Quiz Progress Indicator
-- Countdown Timer
-- Automatic Score Calculation
-- Result Display
-- Responsive and Modern User Interface
-- MariaDB Database Integration
+**QuizCraft:**  
+https://quizcraft-f9jq.onrender.com/login
 
-## Quiz Flow
+---
 
-1. User creates an account.
-2. User logs into QuizCraft.
-3. Available quizzes are displayed.
-4. User starts a quiz.
-5. Questions are displayed one at a time.
-6. User selects answers and navigates through the quiz.
-7. The quiz is submitted.
-8. The system automatically calculates the score.
-9. The result is saved in the database.
-10. The user can view the final result.
+## ✨ Features
 
-## Technologies Used
+### 🔐 User Authentication
 
-- Java
-- JSP
-- Jakarta Servlets
-- JDBC
-- Maven
-- MariaDB
-- HTML
-- CSS
-- JavaScript
-- Apache Tomcat
+- User registration
+- User login and logout
+- Session-based authentication
+- Protected quiz and result pages
+- Duplicate email validation
+- Login validation
+- User-specific quiz results
 
-## Project Structure
+### 📚 Quiz Dashboard
+
+- Personalized dashboard after login
+- Displays available quizzes
+- Quiz title and description
+- Easy navigation to available courses
+- Clean and responsive card-based interface
+
+### 📝 Interactive Quiz System
+
+- Multiple-choice questions
+- One question displayed at a time
+- Question navigation
+- Progress indicator
+- Answer selection
+- Countdown timer
+- Automatic quiz submission
+- Support for different quiz lengths
+- Random question selection for quiz attempts
+- Prevents duplicate questions within the same attempt
+
+### ⏱️ Quiz Timer
+
+- Countdown timer during an active quiz
+- Helps simulate a real examination environment
+- Automatically manages the quiz duration
+
+### 📊 Automatic Evaluation
+
+- Answers are evaluated automatically
+- Score is calculated immediately after submission
+- Supports unanswered questions
+- Displays score based on attempted questions
+
+### 🏆 Result System
+
+- Displays final quiz score
+- Shows score percentage
+- Displays total questions
+- Shows quiz completion status
+- Stores quiz attempts in the database
+- Users can view their previous quiz results
+
+### 📈 Topic-Wise Performance
+
+QuizCraft analyzes performance at the topic level.
+
+The result page can provide:
+
+- Topic-wise performance
+- Correct and incorrect answers by topic
+- Performance breakdown for the completed attempt
+- Better understanding of strong and weak areas
+
+### 📋 Recent Results
+
+Users can view their previous quiz attempts through the Recent Results section.
+
+It includes:
+
+- Quiz number
+- Score obtained
+- Total questions
+- Previous attempt records
+
+### 🗄️ Database Integration
+
+QuizCraft uses a relational database to store application data.
+
+The database manages:
+
+- Users
+- Quizzes
+- Questions
+- Quiz results
+- Topic-wise performance
+
+Database access is implemented using JDBC and DAO classes.
+
+### 🔒 Secure Configuration
+
+Database credentials are not stored directly in the source code.
+
+The application supports:
+
+- Environment variables for production
+- Local properties for development
+- Separate production database configuration
+- TLS/SSL database connections
+- Local configuration files excluded through `.gitignore`
+
+### 🐳 Docker Deployment
+
+QuizCraft includes a production-ready Docker configuration.
+
+The Docker setup:
+
+- Builds the application using Maven
+- Uses Java 17
+- Packages the application as a WAR
+- Runs the application using Apache Tomcat 10.1
+- Supports dynamically assigned deployment ports
+- Removes unused Tomcat applications from the production image
+
+### ☁️ Cloud Deployment
+
+The application is deployed online using:
+
+- **Render** for application hosting
+- **Aiven MySQL** for the production database
+
+The deployed application uses environment-based database configuration so production credentials remain outside the GitHub repository.
+
+---
+
+## 🛠️ Technology Stack
+
+| Technology | Purpose |
+|------------|---------|
+| Java 17 | Backend development |
+| JSP | Dynamic web pages |
+| Jakarta Servlets | Request handling and application flow |
+| JDBC | Database connectivity |
+| MySQL | Production database |
+| MariaDB | Local database development |
+| Maven | Build and dependency management |
+| HTML5 | Page structure |
+| CSS3 | Styling and responsive UI |
+| JavaScript | Client-side interactions and quiz timer |
+| Apache Tomcat 10.1 | Servlet container |
+| Docker | Production deployment |
+| Render | Cloud application hosting |
+| Aiven | Cloud database hosting |
+| Git & GitHub | Version control |
+
+---
+
+## 🏗️ Project Architecture
+
+QuizCraft follows a layered architecture to keep different responsibilities separated.
 
 ```text
-QuizCraft/
+QuizCraft
 │
-├── src/
-│   └── main/
-│       ├── java/
-│       │   ├── dao/
-│       │   ├── model/
-│       │   ├── service/
-│       │   ├── servlet/
-│       │   └── util/
-│       │
-│       ├── resources/
-│       │   └── schema.sql
-│       │
-│       └── webapp/
-│           ├── css/
-│           │   └── style.css
-│           ├── WEB-INF/
-│           │   └── web.xml
-│           ├── login.jsp
-│           ├── register.jsp
-│           ├── home.jsp
-│           ├── quiz.jsp
-│           └── result.jsp
+├── Model
+│   ├── User
+│   ├── Quiz
+│   ├── Question
+│   ├── Result
+│   └── TopicPerformance
 │
-├── pom.xml
-├── .gitignore
-└── README.md
+├── DAO
+│   ├── UserDAO
+│   ├── QuizDAO
+│   ├── QuestionDAO
+│   ├── ResultDAO
+│   └── TopicPerformanceDAO
+│
+├── Service
+│   ├── QuizService
+│   └── FeedbackService
+│
+├── Servlet
+│   ├── Authentication
+│   ├── Quiz
+│   └── Result handling
+│
+├── JSP
+│   ├── Login
+│   ├── Registration
+│   ├── Dashboard
+│   ├── Quiz
+│   └── Result
+│
+└── Database
+    ├── Users
+    ├── Quizzes
+    ├── Questions
+    ├── Results
+    └── Topic Performance
